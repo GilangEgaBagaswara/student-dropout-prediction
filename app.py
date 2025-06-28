@@ -23,188 +23,197 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS dengan Skema Warna Harmonis
 st.markdown("""
 <style>
-    /* Main App Styling */
+    /* Main App Styling - Background yang Tenang */
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
     
-    /* Main Container */
+    /* Main Container - Clean White */
     .main .block-container {
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 15px;
-        padding: 2rem;
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
         margin-top: 1rem;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
     
-    /* Headers */
+    /* Headers - Professional Blue Tones */
     .main-header {
         font-size: 3rem;
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #1e40af;
         text-align: center;
         margin-bottom: 2rem;
-        font-weight: bold;
+        font-weight: 700;
+        text-shadow: none;
     }
     
     .sub-header {
         font-size: 1.8rem;
-        color: #2C3E50;
+        color: #374151;
         margin-bottom: 1.5rem;
         text-align: center;
-        background: linear-gradient(45deg, #3498DB, #9B59B6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
         font-weight: 600;
     }
     
-    /* Metric Cards */
+    /* Metric Cards - Distinct Color Palette */
     .metric-card {
-        background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+        background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(116, 185, 255, 0.3);
+        padding: 1.8rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(59, 130, 246, 0.25);
         text-align: center;
-        margin-bottom: 1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.2rem;
+        border: none;
     }
     
     .warning-card {
-        background: linear-gradient(135deg, #fdcb6e 0%, #e17055 100%);
+        background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(253, 203, 110, 0.3);
+        padding: 1.8rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25);
         text-align: center;
-        margin-bottom: 1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        margin-bottom: 1.2rem;
+        border: none;
     }
     
     .success-card {
-        background: linear-gradient(135deg, #00b894 0%, #00a085 100%);
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+        padding: 1.8rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(16, 185, 129, 0.25);
         text-align: center;
-        margin-bottom: 1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.2rem;
+        border: none;
     }
     
     .danger-card {
-        background: linear-gradient(135deg, #e84393 0%, #fd79a8 100%);
+        background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
         color: white;
-        padding: 1.5rem;
-        border-radius: 15px;
-        box-shadow: 0 8px 25px rgba(232, 67, 147, 0.3);
+        padding: 1.8rem;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(239, 68, 68, 0.25);
         text-align: center;
-        margin-bottom: 1rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        margin-bottom: 1.2rem;
+        border: none;
     }
     
-    /* Sidebar Styling */
+    /* Sidebar Styling - Professional */
     .css-1d391kg {
-        background: linear-gradient(180deg, #2C3E50, #3498DB);
+        background: linear-gradient(180deg, #1f2937, #374151);
     }
     
     .css-1d391kg .stSelectbox label {
         color: white !important;
-        font-weight: bold;
+        font-weight: 600;
     }
     
-    /* Charts and Plots */
+    /* Charts and Plots - Clean Background */
     .stPlotlyChart {
-        background: rgba(255, 255, 255, 0.9);
-        border-radius: 10px;
-        padding: 1rem;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        background: white;
+        border-radius: 12px;
+        padding: 1.2rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border: 1px solid rgba(0, 0, 0, 0.05);
     }
     
-    /* Custom Buttons */
+    /* Custom Buttons - Cohesive Color */
     .stButton > button {
-        background: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+        background: linear-gradient(45deg, #1e40af, #3b82f6);
         color: white;
         border: none;
-        border-radius: 25px;
-        padding: 0.5rem 2rem;
-        font-weight: bold;
+        border-radius: 12px;
+        padding: 0.6rem 2rem;
+        font-weight: 600;
         transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.25);
     }
     
     .stButton > button:hover {
         transform: translateY(-2px);
-        box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        box-shadow: 0 6px 20px rgba(30, 64, 175, 0.35);
+        background: linear-gradient(45deg, #1d4ed8, #2563eb);
     }
     
-    /* Section Headers */
+    /* Section Headers - Consistent Branding */
     .section-header {
-        background: linear-gradient(45deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(45deg, #1e40af 0%, #3b82f6 100%);
         color: white;
-        padding: 1rem;
-        border-radius: 10px;
+        padding: 1.2rem;
+        border-radius: 12px;
         text-align: center;
-        margin: 1rem 0;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+        margin: 1.5rem 0;
+        font-size: 1.3rem;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(30, 64, 175, 0.2);
     }
     
-    /* Insights Box */
+    /* Insights Box - Subtle and Professional */
     .insight-box {
-        background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
-        color: #2C3E50;
-        padding: 1.5rem;
-        border-radius: 15px;
-        margin: 1rem 0;
-        border-left: 5px solid #FF6B6B;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+        color: #1e293b;
+        padding: 2rem;
+        border-radius: 16px;
+        margin: 1.5rem 0;
+        border-left: 5px solid #3b82f6;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(59, 130, 246, 0.1);
     }
     
     .insight-box h4 {
-        color: #2C3E50;
+        color: #1e40af;
         margin-bottom: 1rem;
-        font-weight: bold;
+        font-weight: 700;
     }
     
     .insight-box p, .insight-box li {
-        color: #34495E;
-        line-height: 1.6;
+        color: #374151;
+        line-height: 1.7;
+        font-size: 0.95rem;
     }
     
-    /* Color for metrics text */
+    /* Metric Values - Clear Hierarchy */
     .metric-value {
-        font-size: 2.5rem;
-        font-weight: bold;
+        font-size: 2.2rem;
+        font-weight: 700;
         margin-bottom: 0.5rem;
-        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        letter-spacing: -0.5px;
     }
     
     .metric-label {
-        font-size: 1rem;
-        opacity: 0.95;
+        font-size: 0.95rem;
+        opacity: 0.9;
+        font-weight: 500;
     }
     
-    /* Custom styling for better text readability */
+    /* Text Readability */
     .stMarkdown h1, .stMarkdown h2, .stMarkdown h3 {
-        color: #2C3E50;
+        color: #1e293b;
+        font-weight: 600;
     }
     
     .stMarkdown p {
-        color: #34495E;
+        color: #374151;
         line-height: 1.6;
     }
     
-    /* Form labels */
+    /* Form Elements */
     .stSelectbox label, .stNumberInput label {
-        color: #2C3E50 !important;
+        color: #374151 !important;
         font-weight: 600;
+    }
+    
+    /* Data Tables */
+    .stDataFrame {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -441,14 +450,163 @@ def show_dashboard(df):
     
     st.markdown("<br>", unsafe_allow_html=True)
     
-    # MULTIVARIATE ANALYSIS - Faktor Risiko Dropout
-    st.markdown('<div class="section-header">🔍 Analisis Multivariate: Faktor Risiko Dropout</div>', unsafe_allow_html=True)
+    # ENHANCED MULTIVARIATE ANALYSIS - Fokus pada Dropout Analysis
+    st.markdown('<div class="section-header">🔍 Analisis Multivariate: Faktor Risiko Dropout vs Non-Dropout</div>', unsafe_allow_html=True)
+    
+    # Key Dropout Statistics
+    st.markdown("### 📊 **INSIGHT KRITIS: Perbandingan Dropout vs Non-Dropout**")
+    
+    # Calculate key metrics for comparison
+    dropout_data = df[df['Status'] == 'Dropout']
+    non_dropout_data = df[df['Status'] != 'Dropout']
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        dropout_tuition_unpaid = (dropout_data['Tuition_fees_up_to_date'] == 0).mean() * 100
+        non_dropout_tuition_unpaid = (non_dropout_data['Tuition_fees_up_to_date'] == 0).mean() * 100
+        
+        st.markdown(f'''
+        <div class="insight-box">
+            <h4>💰 Faktor Finansial</h4>
+            <p><strong>SPP Bermasalah:</strong></p>
+            <p>• Dropout: <span style="color: #ef4444; font-weight: bold;">{dropout_tuition_unpaid:.1f}%</span></p>
+            <p>• Non-Dropout: <span style="color: #10b981; font-weight: bold;">{non_dropout_tuition_unpaid:.1f}%</span></p>
+            <p><strong>Risk Factor: {dropout_tuition_unpaid/non_dropout_tuition_unpaid:.1f}x lebih tinggi</strong></p>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    with col2:
+        dropout_no_scholarship = (dropout_data['Scholarship_holder'] == 0).mean() * 100
+        non_dropout_no_scholarship = (non_dropout_data['Scholarship_holder'] == 0).mean() * 100
+        
+        st.markdown(f'''
+        <div class="insight-box">
+            <h4>🎓 Faktor Beasiswa</h4>
+            <p><strong>Tanpa Beasiswa:</strong></p>
+            <p>• Dropout: <span style="color: #ef4444; font-weight: bold;">{dropout_no_scholarship:.1f}%</span></p>
+            <p>• Non-Dropout: <span style="color: #10b981; font-weight: bold;">{non_dropout_no_scholarship:.1f}%</span></p>
+            <p><strong>Risk Factor: {dropout_no_scholarship/non_dropout_no_scholarship:.1f}x lebih tinggi</strong></p>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    with col3:
+        dropout_avg_grade = dropout_data['Curricular_units_1st_sem_grade'].mean()
+        non_dropout_avg_grade = non_dropout_data['Curricular_units_1st_sem_grade'].mean()
+        
+        st.markdown(f'''
+        <div class="insight-box">
+            <h4>📚 Faktor Akademik</h4>
+            <p><strong>Rata-rata Nilai Sem 1:</strong></p>
+            <p>• Dropout: <span style="color: #ef4444; font-weight: bold;">{dropout_avg_grade:.1f}</span></p>
+            <p>• Non-Dropout: <span style="color: #10b981; font-weight: bold;">{non_dropout_avg_grade:.1f}</span></p>
+            <p><strong>Gap: {non_dropout_avg_grade - dropout_avg_grade:.1f} poin</strong></p>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    # COMPARATIVE MULTIVARIATE VISUALIZATIONS
+    st.markdown('<div class="section-header">📈 Visualisasi Perbandingan: Dropout vs Non-Dropout</div>', unsafe_allow_html=True)
     
     col1, col2 = st.columns(2)
     
     with col1:
-        st.markdown("#### 💰 Faktor Finansial vs Dropout")
-        # Analisis faktor finansial
+        st.markdown("#### 💰 **Risk Analysis: Financial Factors**")
+        
+        # Create comprehensive financial risk analysis
+        financial_factors = ['Tuition_fees_up_to_date', 'Debtor', 'Scholarship_holder']
+        financial_dropout_rates = []
+        factor_labels = []
+        
+        for factor in financial_factors:
+            for value in [0, 1]:
+                subset = df[df[factor] == value]
+                if len(subset) > 0:
+                    dropout_rate = (subset['Status'] == 'Dropout').mean() * 100
+                    financial_dropout_rates.append(dropout_rate)
+                    
+                    if factor == 'Tuition_fees_up_to_date':
+                        label = 'SPP Bermasalah' if value == 0 else 'SPP Lancar'
+                    elif factor == 'Debtor':
+                        label = 'Debitur' if value == 1 else 'Non-Debitur'
+                    else:  # Scholarship_holder
+                        label = 'Tanpa Beasiswa' if value == 0 else 'Dengan Beasiswa'
+                    
+                    factor_labels.append(label)
+        
+        financial_df = pd.DataFrame({
+            'Faktor': factor_labels,
+            'Dropout_Rate': financial_dropout_rates
+        })
+        
+        fig = px.bar(financial_df, x='Faktor', y='Dropout_Rate',
+                    color='Dropout_Rate', 
+                    color_continuous_scale='Reds',
+                    title="Tingkat Dropout berdasarkan Faktor Finansial (%)",
+                    text='Dropout_Rate')
+        
+        fig.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
+        fig.update_layout(
+            height=400,
+            xaxis_title="Kategori Finansial",
+            yaxis_title="Tingkat Dropout (%)",
+            xaxis={'tickangle': -45},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            showlegend=False
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # Key insight for financial factors
+        highest_risk = financial_df.loc[financial_df['Dropout_Rate'].idxmax()]
+        st.markdown(f'''
+        <div class="insight-box">
+            <p><strong>🚨 HIGHEST RISK:</strong> {highest_risk['Faktor']} ({highest_risk['Dropout_Rate']:.1f}% dropout rate)</p>
+        </div>
+        ''', unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("#### 📊 **Academic Performance Impact**")
+        
+        # Academic performance analysis with clear bins
+        df_temp = df.copy()
+        df_temp['Academic_Level'] = pd.cut(df_temp['Curricular_units_1st_sem_grade'], 
+                                          bins=[0, 10, 13, 16, 20], 
+                                          labels=['Rendah (≤10)', 'Sedang (10-13)', 'Baik (13-16)', 'Excellent (>16)'],
+                                          include_lowest=True)
+        
+        academic_analysis = df_temp.groupby('Academic_Level').agg({
+            'Status': ['count', lambda x: (x == 'Dropout').sum()]
+        }).round(1)
+        
+        academic_analysis.columns = ['Total_Students', 'Dropout_Count']
+        academic_analysis['Dropout_Rate'] = (academic_analysis['Dropout_Count'] / academic_analysis['Total_Students'] * 100).round(1)
+        academic_analysis = academic_analysis.reset_index()
+        
+        fig = px.bar(academic_analysis, x='Academic_Level', y='Dropout_Rate',
+                    color='Dropout_Rate',
+                    color_continuous_scale='RdYlGn_r',
+                    title="Tingkat Dropout berdasarkan Performa Akademik (%)",
+                    text='Dropout_Rate')
+        
+        fig.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
+        fig.update_layout(
+            height=400,
+            xaxis_title="Level Performa Akademik",
+            yaxis_title="Tingkat Dropout (%)",
+            xaxis={'tickangle': -45},
+            paper_bgcolor='rgba(0,0,0,0)',
+            plot_bgcolor='rgba(0,0,0,0)',
+            showlegend=False
+        )
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # Key insight for academic performance
+        worst_performance = academic_analysis.loc[academic_analysis['Dropout_Rate'].idxmax()]
+        st.markdown(f'''
+        <div class="insight-box">
+            <p><strong>🚨 CRITICAL FINDING:</strong> {worst_performance['Academic_Level']} → {worst_performance['Dropout_Rate']:.1f}% dropout rate</p>
+        </div>
+        ''', unsafe_allow_html=True)
         financial_analysis = pd.DataFrame({
             'Faktor': ['SPP Tidak Terbayar', 'SPP Terbayar', 'Debitur', 'Non-Debitur', 'Tanpa Beasiswa', 'Dengan Beasiswa'],
             'Dropout_Rate': [

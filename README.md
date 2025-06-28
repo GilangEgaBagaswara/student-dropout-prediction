@@ -1,28 +1,36 @@
 # Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech
 
-## 🚀 Live Demo & Quick Start
+## 🚀 **Deployment & Live Demo**
 
-### 🌐 **Status Deployment Streamlit Cloud**
-**🔗 Repository GitHub:** [https://github.com/GilangEgaBagaswara/student-dropout-prediction](https://github.com/GilangEgaBagaswara/student-dropout-prediction)
+### 🌐 **Streamlit Cloud Deployment Status**
 
-**⚠️ Status Deployment:** 
-Aplikasi telah berhasil di-push ke GitHub dan dilakukan deployment ke Streamlit Cloud. Namun, pada saat testing terjadi **Error 403 - Fair-use limits exceeded** pada platform Streamlit Cloud. Error ini disebabkan oleh:
+**� Deployment Process Completed:**
+1. ✅ Upload proyek ke GitHub: [https://github.com/GilangEgaBagaswara/student-dropout-prediction](https://github.com/GilangEgaBagaswara/student-dropout-prediction)
+2. ✅ Login ke Streamlit Cloud Community
+3. ✅ Integrasi proyek GitHub dengan Streamlit Cloud
+4. ✅ Konfigurasi deployment dengan `app.py` sebagai main file
 
-1. **Resource Usage Limit**: Model dan dataset yang relatif besar melebihi limit resource gratis
-2. **Deployment Frequency**: Terlalu sering rebuild saat troubleshooting compatibility issues
-3. **Memory Usage**: Aplikasi dengan 4 halaman fitur dan visualisasi yang kompleks
+**⚠️ Kendala Deployment:**
+Saat proses deployment dan testing, terjadi error berikut pada Streamlit Cloud:
 
-**✅ Solusi yang Telah Dilakukan:**
-- Optimasi memory usage dengan garbage collection
-- Implementasi lightweight model loading
-- Resource-efficient data processing
-- Compatibility fixes untuk numpy/sklearn versions
+```
+Error: Your account has exceeded the fair-use limits and was blocked by the system. 
+Code: 403
+```
 
-**🔄 Current Status:**
-Aplikasi menunggu recovery otomatis dari Streamlit Cloud (biasanya 15-30 menit). 
-**Aplikasi dapat dijalankan dengan sempurna secara lokal** sebagaimana telah diverifikasi.
+**🔍 Analisis Error:**
+Error ini disebabkan oleh limitasi fair-use policy Streamlit Cloud Community yang membatasi:
+- Resource usage (CPU/Memory) untuk aplikasi machine learning kompleks
+- Frequency deployment saat troubleshooting
+- Model size dan dataset complexity
 
-### 🏠 **Local Testing (VERIFIED WORKING)**
+**💡 Solusi Implementasi:**
+Meskipun deployment cloud mengalami kendala, aplikasi telah dioptimasi dan **berhasil diverifikasi berjalan sempurna secara lokal**. Untuk production deployment, disarankan menggunakan:
+- Streamlit Cloud dengan akun berbayar
+- Deployment alternatif: Heroku, AWS, atau GCP
+- Local deployment untuk demo dan testing
+
+### 🏠 **Local Testing - VERIFIED WORKING**
 ```bash
 # Test dilakukan pada tanggal: 28 Juni 2025
 streamlit run app.py --server.port 8502
@@ -52,15 +60,20 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 # Login: root@mail.com / root123
 ```
 
-**Files yang Penting:**
-- `app.py`: Aplikasi ML Streamlit (4 halaman fitur)
-- `Submission2_DataScients_GilangEgaBagaswara_A387YBM185.ipynb`: Jupyter notebook analisis lengkap
-- `model/`: Model Random Forest terlatih (Akurasi: 89.2%)
-- `data.db`: Database SQLite untuk dashboard Metabase
-- `requirements.txt`: Dependencies Python untuk deployment
-- `README.md`: Dokumentasi lengkap proyek
+**📊 Fitur Aplikasi (4 Halaman):**
+- **Dashboard Overview**: Analisis multivariate dropout dengan visualisasi interaktif
+- **Prediksi Individual**: Input form untuk prediksi risiko dropout per mahasiswa
+- **Analisis Batch**: Upload file untuk prediksi massal
+- **Model Information**: Metrics, feature importance, dan dokumentasi model
 
-**📓 Struktur Notebook (Sesuai Template Dicoding):**
+**🎯 Dashboard Analytics (Metabase BI):**
+- **Multivariate Analysis**: Analisis hubungan faktor-faktor dengan status dropout
+- **Real-time Monitoring**: Dashboard monitoring KPI institusi
+- **Trend Analysis**: Visualisasi tren dropout berdasarkan waktu dan program studi
+- **Risk Segmentation**: Segmentasi mahasiswa berdasarkan tingkat risiko dropout
+- **Actionable Insights**: Rekomendasi berbasis data untuk intervensi
+
+**� Struktur Proyek:**
 1. **Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech** - Business Understanding
 2. **Informasi Personal** - Nama, Email, ID Dicoding
 3. **Persiapan** - Import libraries dan load data
