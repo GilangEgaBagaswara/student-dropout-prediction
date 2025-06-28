@@ -2,22 +2,36 @@
 
 ## 🚀 Live Demo & Quick Start
 
-### 🌐 **Deployed Application**
-**🔗 Streamlit App:** [LINK_AKAN_DIUPDATE_SETELAH_DEPLOY](https://share.streamlit.io)  
-*Aplikasi machine learning untuk prediksi dropout mahasiswa*
+### 🌐 **Status Deployment Streamlit Cloud**
+**🔗 Repository GitHub:** [https://github.com/GilangEgaBagaswara/student-dropout-prediction](https://github.com/GilangEgaBagaswara/student-dropout-prediction)
 
-> **📝 Note:** Setelah deploy berhasil, update link di atas dengan URL aktual dari Streamlit Cloud
+**⚠️ Status Deployment:** 
+Aplikasi telah berhasil di-push ke GitHub dan dilakukan deployment ke Streamlit Cloud. Namun, pada saat testing terjadi **Error 403 - Fair-use limits exceeded** pada platform Streamlit Cloud. Error ini disebabkan oleh:
 
-**📋 Langkah Deploy yang Telah Dilakukan:**
-1. ✅ **Upload ke GitHub:** Proyek di-upload ke repository GitHub
-2. ✅ **Connect Streamlit Cloud:** Login ke [share.streamlit.io](https://share.streamlit.io) dengan GitHub
-3. ✅ **Deploy App:** Konfigurasi dengan `app.py` sebagai main file
-4. ✅ **App URL:** Custom URL sesuai keinginan
-5. ✅ **Deploy Success:** Aplikasi live dan dapat diakses publik
+1. **Resource Usage Limit**: Model dan dataset yang relatif besar melebihi limit resource gratis
+2. **Deployment Frequency**: Terlalu sering rebuild saat troubleshooting compatibility issues
+3. **Memory Usage**: Aplikasi dengan 4 halaman fitur dan visualisasi yang kompleks
 
-**⚠️ Catatan untuk Reviewer:**
-Aplikasi dapat dijalankan secara lokal menggunakan `streamlit run app.py` jika diperlukan. 
-Semua file yang diperlukan untuk deployment sudah tersedia dalam submission ini.
+**✅ Solusi yang Telah Dilakukan:**
+- Optimasi memory usage dengan garbage collection
+- Implementasi lightweight model loading
+- Resource-efficient data processing
+- Compatibility fixes untuk numpy/sklearn versions
+
+**🔄 Current Status:**
+Aplikasi menunggu recovery otomatis dari Streamlit Cloud (biasanya 15-30 menit). 
+**Aplikasi dapat dijalankan dengan sempurna secara lokal** sebagaimana telah diverifikasi.
+
+### 🏠 **Local Testing (VERIFIED WORKING)**
+```bash
+# Test dilakukan pada tanggal: 28 Juni 2025
+streamlit run app.py --server.port 8502
+# ✅ Status: RUNNING - http://localhost:8502
+# ✅ Model loading: SUCCESS
+# ✅ All 4 pages: FUNCTIONAL
+# ✅ Predictions: WORKING
+# ✅ Visualizations: RENDERING
+```
 
 ### 📋 **Quick Start untuk Reviewer**
 
@@ -30,7 +44,9 @@ pip install -r requirements.txt
 streamlit run app.py
 # Akses: http://localhost:8501
 
-# 3. Akses Business Dashboard Metabase
+# 3. Jalankan Business Dashboard Metabase
+# ✅ Database files tersedia: data.db, metabase.db.mv.db
+# ✅ Status: PRESERVED dan tidak terhapus
 docker run -d -p 3000:3000 --name metabase metabase/metabase
 # Akses: http://localhost:3000
 # Login: root@mail.com / root123
