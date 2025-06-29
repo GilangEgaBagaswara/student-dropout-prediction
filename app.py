@@ -7,6 +7,7 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import warnings
+import os
 warnings.filterwarnings('ignore')
 
 # Fix numpy random generator issue for older versions
@@ -15,9 +16,29 @@ try:
 except AttributeError:
     pass
 
-# Page configuration
+# Hugging Face Spaces optimization
+@st.cache_resource
+def load_model_and_data():
+    """Load model and data with caching for Hugging Face Spaces"""
+    try:
+        model = joblib.load('model/student_dropout_model.pkl')
+        
+        with open('model/feature_names.pkl', 'rb') as f:
+            feature_names = pickle.load(f)
+            
+        with open('model/model_metrics.pkl', 'rb') as f:
+            model_metrics = pickle.load(f)
+            
+        data = pd.read_csv('data.csv', sep=';')
+        
+        return model, feature_names, model_metrics, data
+    except Exception as e:
+        st.error(f"Error loading model/data: {str(e)}")
+        return None, None, None, None
+
+# Page configuration optimized for HF Spaces
 st.set_page_config(
-    page_title="Jaya Jaya Institut - Sistem Prediksi Dropout",
+    page_title="🎓 Jaya Jaya Institut - Sistem Prediksi Dropout",
     page_icon="🎓",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -220,21 +241,17 @@ st.markdown("""
 
 @st.cache_data
 def load_data():
-    """Load the dataset with memory optimization"""
+    """Load the dataset with memory optimization for HF Spaces"""
     try:
-        # Load with optimized settings
         df = pd.read_csv('data.csv', sep=';', low_memory=False)
         
-        # Memory optimization
+        # Memory optimization for HF Spaces
         for col in df.select_dtypes(include=['float64']).columns:
             df[col] = pd.to_numeric(df[col], downcast='float')
         for col in df.select_dtypes(include=['int64']).columns:
             df[col] = pd.to_numeric(df[col], downcast='integer')
             
         return df
-    except FileNotFoundError:
-        st.error("❌ File data.csv tidak ditemukan. Pastikan file tersedia di direktori proyek.")
-        return None
     except Exception as e:
         st.error(f"❌ Error loading data: {e}")
         return None
@@ -378,26 +395,27 @@ def preprocess_input(input_data, feature_names):
 def main():
     st.markdown('<h1 class="main-header">🎓 Jaya Jaya Institut</h1>', unsafe_allow_html=True)
     st.markdown('<h2 class="sub-header">Sistem Prediksi Dropout Siswa</h2>', unsafe_allow_html=True)
+    st.markdown('<p class="sub-description">Machine Learning Solution for Student Success Prediction</p>', unsafe_allow_html=True)
     
-    # Load data and model
-    df = load_data()
-    model, feature_names, model_metrics = load_model()
+    # Load data and model using cached functions
+    model, feature_names, model_metrics, df = load_model_and_data()
     
     if df is None or model is None:
+        st.error("Failed to load required data and model files.")
         st.stop()
     
-    # Sidebar navigation
-    st.sidebar.title("📊 Navigation")
+    # Sidebar navigation optimized for HF Spaces
+    st.sidebar.title("🧭 Navigation")
     page = st.sidebar.selectbox("Pilih Halaman:", 
-                               ["Dashboard Overview", "Prediksi Individual", "Analisis Batch", "Model Information"])
+                               ["📊 Dashboard Analytics", "🔮 Prediksi Individual", "📈 Analisis Batch", "ℹ️ Model Information"])
     
-    if page == "Dashboard Overview":
+    if page == "📊 Dashboard Analytics":
         show_dashboard(df)
-    elif page == "Prediksi Individual":
+    elif page == "🔮 Prediksi Individual":
         show_individual_prediction(model, feature_names, model_metrics)
-    elif page == "Analisis Batch":
+    elif page == "📈 Analisis Batch":
         show_batch_analysis(df, model, feature_names)
-    elif page == "Model Information":
+    elif page == "ℹ️ Model Information":
         show_model_info(model_metrics, df)
 
 def show_dashboard(df):
