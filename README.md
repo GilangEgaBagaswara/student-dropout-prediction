@@ -5,7 +5,7 @@ colorFrom: blue
 colorTo: red
 sdk: streamlit
 sdk_version: 1.28.1
-app_file: app.py
+app_file: app_clean.py
 pinned: false
 license: mit
 ---
@@ -21,6 +21,7 @@ Terima kasih atas feedback konstruktif yang telah diberikan sebelumnya. Berikut 
 **1. Dashboard Multivariate Analysis (Feedback: "Dashboard kurang informatif dalam analisis multivariate")**
 
 ✅ **Perbaikan yang telah dilakukan:**
+
 - Menambahkan analisis perbandingan mendalam antara mahasiswa **dropout vs non-dropout**
 - Implementasi **risk quantification** dengan kategori Rendah/Sedang/Tinggi berdasarkan probabilitas
 - Visualisasi **comparative analysis** untuk faktor-faktor kritis (akademis, finansial, demografis)
@@ -31,6 +32,7 @@ Terima kasih atas feedback konstruktif yang telah diberikan sebelumnya. Berikut 
 **2. Analisis Hubungan Fitur dengan Label Target**
 
 ✅ **Enhancement yang ditambahkan:**
+
 - **Multivariate Correlation Analysis**: Heatmap korelasi fitur-fitur penting dengan status dropout
 - **Feature Importance Visualization**: Ranking faktor-faktor yang paling berpengaruh terhadap keputusan dropout
 - **Comparative Statistics**: Perbandingan rata-rata nilai, usia, dan indikator finansial antara grup dropout dan non-dropout
@@ -39,12 +41,14 @@ Terima kasih atas feedback konstruktif yang telah diberikan sebelumnya. Berikut 
 **3. Visualisasi Data yang Lebih Relevan**
 
 ✅ **Peningkatan visualisasi:**
+
 - Mengganti visualisasi distribusi umum dengan **focused dropout analysis**
 - **Interactive Charts** dengan filter berdasarkan status mahasiswa
 - **Side-by-side comparison** untuk memudahkan reviewer melihat perbedaan pola
 - **Color-coded visualization** untuk membedakan grup berisiko tinggi dan rendah
 
 **Lokasi Implementasi:**
+
 - **Streamlit Dashboard**: Halaman "Dashboard Overview" - Section "Analisis Multivariate"
 - **Metabase Dashboard**: Business Intelligence dengan insight multivariate lengkap
 - **Notebook**: Cell analisis EDA telah diperkaya dengan comparative analysis
@@ -58,6 +62,7 @@ Saya berharap perbaikan ini telah memenuhi ekspektasi dan memberikan insight yan
 ### 🌐 **Hugging Face Spaces Deployment - READY TO DEPLOY**
 
 **🎯 DEPLOYMENT SETUP COMPLETED:**
+
 1. ✅ Upload proyek ke GitHub: [https://github.com/GilangEgaBagaswara/student-dropout-prediction](https://github.com/GilangEgaBagaswara/student-dropout-prediction)
 2. ✅ Metadata Hugging Face Spaces telah ditambahkan ke README.md
 3. ✅ Requirements.txt telah dioptimasi untuk HF Spaces deployment
@@ -66,6 +71,7 @@ Saya berharap perbaikan ini telah memenuhi ekspektasi dan memberikan insight yan
 **📋 LANGKAH DEPLOYMENT KE HUGGING FACE SPACES:**
 
 **Step 1: Buat Space Baru**
+
 - Buka https://huggingface.co/new-space
 - Space name: `student-dropout-prediction`
 - Owner: pilih username Anda
@@ -74,11 +80,13 @@ Saya berharap perbaikan ini telah memenuhi ekspektasi dan memberikan insight yan
 - Visibility: Public
 
 **Step 2: Connect GitHub Repository**
+
 - Pilih "Connect to GitHub repository"
 - Repository: `GilangEgaBagaswara/student-dropout-prediction`
 - Branch: `main`
 
 **Step 3: Auto-Deploy**
+
 - Hugging Face akan otomatis membaca metadata dari README.md
 - Aplikasi akan ter-deploy dalam 3-5 menit
 - URL akan tersedia: `https://huggingface.co/spaces/[username]/student-dropout-prediction`
@@ -87,12 +95,13 @@ Saya berharap perbaikan ini telah memenuhi ekspektasi dan memberikan insight yan
 Deployment awal ke Streamlit Cloud mengalami error berikut:
 
 ```
-Error: Your account has exceeded the fair-use limits and was blocked by the system. 
+Error: Your account has exceeded the fair-use limits and was blocked by the system.
 Code: 403
 ```
 
 **🔍 Analisis Error:**
 Error ini disebabkan oleh limitasi fair-use policy Streamlit Cloud Community yang membatasi:
+
 - Resource usage (CPU/Memory) untuk aplikasi machine learning kompleks
 - Frequency deployment saat troubleshooting
 - Model size dan dataset complexity
@@ -103,19 +112,21 @@ Solusi deployment telah berhasil dengan menggunakan **Hugging Face Spaces** seba
 ### 📋 **Quick Start untuk Reviewer**
 
 **🌐 Akses Aplikasi Live (Recommended):**
+
 ```bash
 # Langsung akses aplikasi yang sudah live:
 URL: https://huggingface.co/spaces/GilangEgaBagaswara/student-dropout-prediction
 
 # ✅ Status: LIVE & FULLY FUNCTIONAL
 # ✅ Model loading: SUCCESS (Cached di cloud)
-# ✅ All 4 pages: ACCESSIBLE 
+# ✅ All 4 pages: ACCESSIBLE
 # ✅ Multivariate Analysis: WORKING
 # ✅ Predictions: REAL-TIME
 # ✅ Visualizations: INTERACTIVE
 ```
 
 **🏠 Setup & Run Locally (Alternative):**
+
 ```bash
 # 1. Install dependencies
 pip install -r requirements.txt
@@ -133,7 +144,8 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 ```
 
 **📊 Fitur Aplikasi Live (4 Halaman) - IMPROVED MULTIVARIATE:**
-- **📊 Dashboard Analytics**: 
+
+- **📊 Dashboard Analytics**:
   - ✨ **IMPROVED**: Analisis multivariate dropout vs non-dropout mendalam
   - ✨ **NEW**: Perbandingan karakteristik per kategori (Gender, Finansial, Akademik)
   - ✨ **NEW**: Risk quantification dengan threshold spesifik
@@ -143,6 +155,7 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 - **ℹ️ Model Information**: Metrics performa model, feature importance, dan technical specs
 
 **🎯 Dashboard Analytics - Multivariate Features:**
+
 - **👫 Analisis Gender**: Persentase dropout Female vs Male dengan insights
 - **💰 Analisis Finansial**: Dampak status SPP terhadap dropout (Risk multiplier analysis)
 - **📚 Analisis Akademik**: Dropout rate berdasarkan kategori nilai semester 1
@@ -150,6 +163,7 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 - **💡 Intervention Strategies**: Rekomendasi actionable berbasis data analytics
 
 **🎯 Metabase BI Dashboard (Tetap Tersedia):**
+
 - **Multivariate Analysis**: Analisis hubungan faktor-faktor dengan status dropout
 - **Real-time Monitoring**: Dashboard monitoring KPI institusi
 - **Trend Analysis**: Visualisasi tren dropout berdasarkan waktu dan program studi
@@ -157,6 +171,7 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 - **Actionable Insights**: Rekomendasi berbasis data untuk intervensi
 
 **� Struktur Proyek:**
+
 1. **Proyek Akhir: Menyelesaikan Permasalahan Perusahaan Edutech** - Business Understanding
 2. **Informasi Personal** - Nama, Email, ID Dicoding
 3. **Persiapan** - Import libraries dan load data
@@ -177,7 +192,7 @@ Jaya Jaya Institut adalah institusi pendidikan perguruan tinggi yang telah berdi
 Tingginya angka dropout mahasiswa di Jaya Jaya Institut menimbulkan berbagai permasalahan:
 
 1. **Dampak Akreditasi**: Tingkat dropout yang tinggi mempengaruhi penilaian akreditasi institusi
-2. **Kerugian Finansial**: Setiap mahasiswa dropout menyebabkan kerugian pendapatan institusi 
+2. **Kerugian Finansial**: Setiap mahasiswa dropout menyebabkan kerugian pendapatan institusi
 3. **Efisiensi Operasional**: Dropout tidak terprediksi mengganggu perencanaan sumber daya akademik
 4. **Reputasi Institusi**: Tingkat keberhasilan mahasiswa yang rendah mempengaruhi citra institusi
 5. **Tantangan Manajemen**: Kesulitan dalam monitoring dan deteksi dini mahasiswa berisiko dropout
@@ -196,6 +211,7 @@ Proyek ini bertujuan mengembangkan solusi berbasis machine learning untuk:
 Sumber data: Dataset mahasiswa Jaya Jaya Institut (4,424 records) dengan 37 fitur mencakup data demografis, akademis, finansial, dan sosio-ekonomi.
 
 Setup environment:
+
 ```bash
 # Install dependencies
 pip install -r requirements.txt
@@ -336,20 +352,24 @@ project_root/
 ### File Descriptions:
 
 **Core Application:**
+
 - **app.py**: Aplikasi Streamlit utama dengan 4 halaman (Dashboard, Prediksi, Batch Analysis, Model Info)
 - **requirements.txt**: Dependencies Python yang dioptimasi untuk kompatibilitas
 - **.streamlit/config.toml**: Konfigurasi Streamlit untuk deployment optimal
 
 **Model Files:**
+
 - **student_dropout_model.pkl**: Model Random Forest terlatih dengan akurasi 89.2%
 - **feature_names.pkl**: Nama-nama fitur yang digunakan untuk training
 - **model_metrics.pkl**: Metrics evaluasi model (accuracy, precision, recall, f1-score)
 
 **Data Files:**
+
 - **data.csv**: Dataset asli 4,424 mahasiswa dengan 37 fitur
 - **data.db**: Database SQLite untuk keperluan Metabase dashboard
 
 **Documentation:**
+
 - **README.md**: Dokumentasi lengkap proyek (file ini)
 - **Notebook**: Jupyter notebook dengan analisis EDA dan model development
 - **Dashboard folder**: Screenshot dan dokumentasi business dashboard
@@ -361,7 +381,7 @@ Sistem machine learning telah diimplementasikan dalam bentuk aplikasi web Stream
 **Cara Menjalankan:**
 
 ```bash
-# 1. Install dependencies 
+# 1. Install dependencies
 pip install -r requirements.txt
 
 # 2. Jalankan aplikasi Streamlit
@@ -369,23 +389,27 @@ streamlit run app.py
 ```
 
 **Akses Aplikasi:**
+
 - URL: http://localhost:8501
 - Aplikasi akan otomatis terbuka di browser
 
 **Fitur Utama:**
 
 1. **Dashboard Overview**
+
    - Statistik institusi real-time
-   - Visualisasi distribusi mahasiswa  
+   - Visualisasi distribusi mahasiswa
    - KPI monitoring institusi
 
 2. **Prediksi Individual**
+
    - Form input data mahasiswa baru
    - Prediksi probabilitas dropout real-time
    - Klasifikasi risiko (Rendah/Sedang/Tinggi)
    - Rekomendasi intervensi spesifik
 
 3. **Batch Analysis**
+
    - Upload file CSV untuk prediksi massal
    - Processing multiple records sekaligus
    - Export hasil dalam format CSV
@@ -396,6 +420,7 @@ streamlit run app.py
    - Technical specifications model
 
 **Model Performance:**
+
 - Algorithm: Random Forest Classifier
 - Accuracy: 89.2%
 - Precision: 84.7%
@@ -403,6 +428,7 @@ streamlit run app.py
 - F1-Score: 81.4%
 
 **Troubleshooting:**
+
 ```bash
 # Jika ada error missing modules
 pip install streamlit pandas numpy scikit-learn plotly joblib
@@ -416,21 +442,24 @@ streamlit run app.py --server.port 8502
 **Masalah Umum dan Solusi:**
 
 1. **Docker tidak bisa running:**
+
    ```bash
    # Pastikan Docker Desktop sudah running
    # Cek status: docker --version
-   
+
    # Jika port 3000 sudah digunakan:
    docker run -d -p 3001:3000 --name metabase metabase/metabase
    # Akses: http://localhost:3001
    ```
 
 2. **Database connection error:**
+
    - Pastikan path ke `data.db` menggunakan absolute path
    - Contoh Windows: `D:\Submission_Project_Data_Scients2\data.db`
    - Contoh Linux/Mac: `/home/user/project/data.db`
 
 3. **Metabase tidak load/blank page:**
+
    ```bash
    # Tunggu 2-3 menit setelah docker run
    # Restart container jika perlu:
@@ -439,15 +468,17 @@ streamlit run app.py --server.port 8502
    ```
 
 4. **Port conflict:**
+
    ```bash
    # Cek port yang digunakan:
    netstat -ano | findstr :3000
-   
+
    # Gunakan port lain:
    docker run -d -p 3001:3000 --name metabase-alt metabase/metabase
    ```
 
 **Akses Cepat Dashboard:**
+
 - Jika semua setup sudah benar, dashboard bisa langsung diakses tanpa setup ulang
 - File `metabase.db.mv.db` berisi konfigurasi yang sudah siap pakai
 
@@ -456,6 +487,7 @@ streamlit run app.py --server.port 8502
 Dashboard business intelligence telah dibuat menggunakan Metabase untuk memberikan insight komprehensif mengenai status mahasiswa dan faktor-faktor yang mempengaruhi dropout.
 
 **Akses Dashboard:**
+
 - URL: http://localhost:3000
 - Username: root@mail.com
 - Password: root123
@@ -463,6 +495,7 @@ Dashboard business intelligence telah dibuat menggunakan Metabase untuk memberik
 **Setup Dashboard:**
 
 **Opsi 1: Menggunakan Docker (Recommended)**
+
 ```bash
 # 1. Install Docker Desktop (jika belum ada)
 # Download dari: https://www.docker.com/products/docker-desktop
@@ -480,6 +513,7 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 ```
 
 **Opsi 2: Download Metabase JAR**
+
 ```bash
 # 1. Download Metabase JAR file
 # wget https://downloads.metabase.com/v0.47.4/metabase.jar
@@ -491,13 +525,15 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 ```
 
 **Catatan Penting:**
+
 - File `data.db` dan `metabase.db.mv.db` sudah tersedia dalam proyek
 - Database `data.db` berisi data mahasiswa yang sudah siap untuk visualization
 - Database `metabase.db.mv.db` berisi konfigurasi Metabase (opsional)
 
 **Komponen Dashboard:**
+
 1. Overview Status Mahasiswa - Distribusi Graduate, Dropout, Enrolled
-2. Analisis Gender vs Status - Perbandingan tingkat dropout berdasarkan gender  
+2. Analisis Gender vs Status - Perbandingan tingkat dropout berdasarkan gender
 3. Program Studi Terpopuler - Ranking program berdasarkan jumlah mahasiswa
 4. Tingkat Dropout per Program - Identifikasi program dengan dropout rate tertinggi
 5. Tingkat Kelulusan per Program - Success rate setiap program studi
@@ -505,6 +541,7 @@ docker run -d -p 3000:3000 --name metabase metabase/metabase
 7. Program Bermasalah - Program dengan dropout rate di atas rata-rata
 
 **Key Insights:**
+
 - Tingkat dropout institusi: 32.1%
 - Program dengan dropout tertinggi memerlukan intervensi khusus
 - Faktor finansial dan akademik semester awal paling berpengaruh
@@ -643,6 +680,7 @@ Proyek machine learning untuk prediksi dropout mahasiswa di Jaya Jaya Institut t
 4. **Program Berisiko**: Beberapa program studi menunjukkan tingkat dropout di atas rata-rata
 
 **Business Impact:**
+
 - Potensi penghematan finansial dengan pengurangan dropout 25%
 - Peningkatan reputasi institusi melalui success rate yang lebih tinggi
 - Optimalisasi alokasi sumber daya akademik dan fasilitas
@@ -654,7 +692,7 @@ Berdasarkan hasil analisis, berikut rekomendasi tindakan untuk mengurangi tingka
 
 - **Program Early Warning**: Implementasi sistem deteksi dini berbasis machine learning untuk monitoring mahasiswa berisiko tinggi
 - **Academic Support**: Program mentoring dan tutoring untuk mahasiswa dengan performa akademik rendah pada semester awal
-- **Financial Aid**: Sistem bantuan finansial dan konseling untuk mahasiswa bermasalah ekonomi  
+- **Financial Aid**: Sistem bantuan finansial dan konseling untuk mahasiswa bermasalah ekonomi
 - **Curriculum Review**: Evaluasi dan perbaikan kurikulum pada program studi dengan tingkat dropout tinggi
 - **Student Counseling**: Layanan konseling akademik dan personal yang lebih intensif
 - **Data-Driven Policy**: Penggunaan insight dari dashboard untuk pengambilan keputusan strategis institusi
@@ -731,16 +769,19 @@ Berdasarkan analisis mendalam terhadap faktor-faktor penyebab dropout, berikut r
 Terima kasih telah meluangkan waktu untuk mereview proyek machine learning ini. Proyek ini telah dikembangkan dengan perhatian detail pada:
 
 **📊 Aspek Teknis:**
+
 - Model Random Forest dengan performa optimal (Akurasi: 89.2%, F1-Score: 81.4%)
 - Feature engineering yang comprehensive untuk meningkatkan prediktabilitas
 - Implementasi best practices dalam machine learning pipeline
 
 **🎯 Aspek Bisnis:**
+
 - Solusi praktis untuk permasalahan nyata institusi pendidikan
 - Dashboard yang actionable dengan rekomendasi berbasis data
 - ROI analysis dengan potensi penghematan finansial yang signifikan
 
 **🔧 Aspek Implementasi:**
+
 - Aplikasi web yang user-friendly dan production-ready
 - Dokumentasi lengkap untuk memudahkan deployment dan maintenance
 - Testing yang comprehensive untuk memastikan reliabilitas sistem
@@ -756,4 +797,4 @@ Jika ada pertanyaan, saran, atau feedback tambahan, saya sangat terbuka untuk di
 
 ---
 
-*Dokumen ini telah disiapkan dengan sepenuh hati untuk memberikan solusi terbaik bagi Jaya Jaya Institut dalam mengatasi permasalahan dropout mahasiswa.*
+_Dokumen ini telah disiapkan dengan sepenuh hati untuk memberikan solusi terbaik bagi Jaya Jaya Institut dalam mengatasi permasalahan dropout mahasiswa._
